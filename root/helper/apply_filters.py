@@ -1,4 +1,4 @@
-from root.API.apicall import get_data_region, get_data
+from root.api.apicall import get_data_region, get_data
 from root.filters.filter_border import filter_border
 from root.filters.filter_population import filter_population
 
