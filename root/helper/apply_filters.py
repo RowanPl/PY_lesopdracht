@@ -9,27 +9,27 @@ def apply_filters(options, countries):
     if options["region"] != "":
         countries = get_data_region(options["region"])
 
-    filtered_countries = countries[:]  # Make a copy of the original list
+    filtered_countries = countries[:]
 
 
-    # Apply filters based on the options dictionary
+
     if options["region"]:
-        # Filter countries by region
+
         filtered_countries = [country for country in filtered_countries if country["region"] == options["region"]]
     if options["population"]:
-        # Filter countries by population
+
         filtered_countries = filter_population(filtered_countries, options["population"])
 
     if options["borders"]["least"] and options["borders"]["most"]:
-        # Filter countries by number of borders
+
         filtered_countries = filter_border(filtered_countries, options["borders"])
 
     if options["languages"]:
-        # Filter countries by languages spoken
+
         filtered_countries = [country for country in filtered_countries if options["languages"] in country["languages"]]
 
     if options["currencies"]:
-        # Filter countries by currencies
+
         filtered_countries = [country for country in filtered_countries if options["currencies"] in country["currencies"]]
 
     return filtered_countries

@@ -4,9 +4,8 @@ def filter_border(countries, options):
 
     filtered_countries = []
     for country in countries:
-        num_borders = len(country.get('borders', []))  # Get the number of borders; if 'borders' key is missing, return an empty list
+        num_borders = len(country.get('borders', []))
 
-        # Filter countries based on the number of borders
         if least <= num_borders <= most:
             filtered_countries.append(country)
 
